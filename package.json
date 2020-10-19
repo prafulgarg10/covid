@@ -1,0 +1,27 @@
+{
+  "name": "wt-assignment",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon server/index.js",
+    "prettier": "prettier --write \"**/*.{js,json,md,yml}\"",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Apurva9997/wt-assignment.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Apurva9997/wt-assignment/issues"
+  },
+  "homepage": "https://github.com/Apurva9997/wt-assignment#readme",
+  "dependencies": {
+    "nodemon": "^2.0.4",
+    "path": "^0.12.7",
+    "prettier": "^2.1.1"
+  }
+}
