@@ -10,6 +10,17 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 const dbConn = require('./database');
 
+const USE_LOCALHOST =
+  process.env.USE_LOCALHOST !== undefined ? process.env.USE_LOCALHOST : true;
+
+const db_name = !USE_LOCALHOST
+  ? config.mongo_db_name
+  : config.mongo_localhost_db_name;
+
+const collection_name = !USE_LOCALHOST
+  ? config.mongo_collection_name
+  : config.mongo_localhost_collection_name;
+
 app.use(express.static(path.join(__dirname, '../client')));
 
 app.get('/register', function (req, res) {
@@ -30,8 +41,8 @@ app.post('/detail_post', async function (req, res) {
   };
   try {
     const queryResponse = await dbConn
-      .db(config.mongo_db_name)
-      .collection(config.mongo_collection_name)
+      .db(db_name)
+      .collection(collection_name)
       .insertOne(response);
     if (queryResponse.result.ok) {
       console.log(chalk.green('Data inserted successfully.'));

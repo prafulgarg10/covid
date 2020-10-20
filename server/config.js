@@ -1,5 +1,7 @@
 module.exports = {
-  mongo_conn_uri: 'mongodb://localhost:27017',
+  mongo_localhost_conn_uri: 'mongodb://localhost:27017',
+  mongo_localhost_db_name: 'mycustomer',
+  mongo_localhost_collection_name: 'customers',
   mongo_db_name: 'praful-assignment',
   mongo_collection_name: 'users',
   mongo_db_read_user: 'praful-read',
